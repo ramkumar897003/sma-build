@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Castiqq Terms of Use</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="The terms for using the Castiqq apps, Castiqq Pro and this website.">
+<link rel="canonical" href="https://castiqq.com/terms.html">
+<meta property="og:url" content="https://castiqq.com/terms.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: same header, tokens and footer as index.html and docs.html. A short gradient band, then one readable column of text. */
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f3f6fd;
+  --surface: #ffffff;
+  --ink: #111a33;
+  --muted: #5d6987;
+  --line: #e1e7f4;
+  --primary: #1f5ae6;
+  --accent-2: #1fb6ee;
+  --chip: #eef3fe;
+  --phone: #e8f0ff;
+  --phone-ink: #1d4fd0;
+  --tv: #e7f7fd;
+  --tv-ink: #0b7fae;
+  --pc: #efeafd;
+  --pc-ink: #5b3cc4;
+  --note: #fff7e6;
+  --note-ink: #8a5a00;
+  --frame: #0e1526;
+  --footer: #0b1222;
+  --footer-ink: #a9b4cf;
+  --font-display: "Poppins", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Open Sans", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1120; --bg-soft: #101a2e; --surface: #142038; --ink: #eef3fc; --muted: #a2afc9; --line: #22314f;
+    --primary: #5b8dff; --accent-2: #2cc3f5; --chip: #18264a;
+    --phone: #1a2b55; --phone-ink: #9bbcff; --tv: #10334a; --tv-ink: #7fd3f5; --pc: #2a2152; --pc-ink: #c2b2ff;
+    --note: #3a2c0c; --note-ink: #f5d38a;
+    --footer: #070c18; --footer-ink: #a2afc9;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b1120; --bg-soft: #101a2e; --surface: #142038; --ink: #eef3fc; --muted: #a2afc9; --line: #22314f;
+  --primary: #5b8dff; --accent-2: #2cc3f5; --chip: #18264a;
+  --phone: #1a2b55; --phone-ink: #9bbcff; --tv: #10334a; --tv-ink: #7fd3f5; --pc: #2a2152; --pc-ink: #c2b2ff;
+  --note: #3a2c0c; --note-ink: #f5d38a;
+  --footer: #070c18; --footer-ink: #a2afc9;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 1rem; line-height: 1.7; margin: 0; }
+a { color: var(--primary); }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.25; }
+.wrap { max-width: 71rem; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.grad { background: linear-gradient(120deg, #1846c9 0%, #2f74ff 55%, #1fb6ee 100%); }
+
+/* header (matches index.html in its scrolled state) */
+.top { position: sticky; top: 0; z-index: 50; padding-top: env(safe-area-inset-top, 0px); background: linear-gradient(120deg, #1846c9 0%, #2f74ff 55%, #1fb6ee 100%); box-shadow: 0 8px 24px -12px rgba(5, 20, 70, .55); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .7rem; }
+.brand { display: flex; align-items: center; gap: .6rem; color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 1.4rem; text-decoration: none; }
+.brand-mark { width: 40px; height: 40px; border-radius: 11px; display: block; box-shadow: 0 0 0 1px rgba(255,255,255,.35); }
+.menu { display: flex; gap: 2rem; font-family: var(--font-display); font-weight: 500; font-size: .95rem; }
+.menu a { color: rgba(255,255,255,.85); text-decoration: none; }
+.menu a:hover, .menu a[aria-current] { color: #fff; }
+.menu a[aria-current] { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
+.top-cta { display: none; padding: .5rem 1.1rem; border-radius: 999px; background: #fff; color: #1846c9; font-family: var(--font-display); font-weight: 600; font-size: .9rem; text-decoration: none; }
+@media (max-width: 760px) { .menu { display: none; } .top-cta { display: inline-flex; } }
+
+/* intro band */
+.intro { color: #fff; }
+.intro .wrap { padding-block: 3.5rem 3rem; display: flex; flex-direction: column; gap: .9rem; }
+.eyebrow { align-self: flex-start; font-family: var(--font-display); font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; background: rgba(255,255,255,.18); padding: .3rem .9rem; border-radius: 999px; }
+.intro h1 { margin: 0; font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 700; }
+.intro p { margin: 0; max-width: 40rem; opacity: .92; font-size: 1.08rem; }
+.legend { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; font-size: .9rem; }
+.legend .dev { box-shadow: 0 0 0 1px rgba(255,255,255,.4); }
+
+/* layout */
+.docs { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 3.5rem; padding-block: 3rem 5rem; align-items: start; }
+.toc { position: sticky; top: 6rem; max-height: calc(100vh - 7rem); overflow-y: auto; }
+.toc summary { display: none; }
+.toc h2 { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 .8rem; }
+.toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .15rem; border-left: 2px solid var(--line); }
+.toc a { display: block; padding: .35rem .9rem; margin-left: -2px; border-left: 2px solid transparent; color: var(--muted); text-decoration: none; font-size: .93rem; line-height: 1.4; }
+.toc a:hover { color: var(--ink); }
+.toc a.active { color: var(--primary); border-left-color: var(--primary); font-weight: 600; }
+@media (max-width: 900px) {
+  .docs { grid-template-columns: 1fr; gap: 1.5rem; padding-block: 1.5rem 4rem; }
+  .toc { position: static; max-height: none; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: .8rem 1rem; }
+  .toc summary { display: block; cursor: pointer; font-family: var(--font-display); font-weight: 600; }
+  .toc h2 { display: none; }
+  .toc ol { margin-top: .6rem; }
+}
+
+/* tutorials */
+.content { min-width: 0; max-width: 48rem; }
+.tut { padding-bottom: 2.5rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+.tut:last-child { border-bottom: 0; }
+.tut > h2 { font-size: 1.65rem; font-weight: 700; margin: 0 0 .5rem; }
+.tut > h3 { font-size: 1.15rem; font-weight: 600; margin: 2rem 0 .8rem; }
+.tut p { margin: 0 0 1rem; }
+.tut .lead { color: var(--muted); font-size: 1.05rem; }
+.need { display: flex; flex-wrap: wrap; gap: .4rem .6rem; align-items: center; margin: 0 0 1.3rem; font-size: .92rem; color: var(--muted); }
+.need b { color: var(--ink); font-weight: 600; }
+.dev { display: inline-flex; align-items: center; gap: .35rem; padding: .15rem .6rem; border-radius: 999px; font-family: var(--font-display); font-size: .75rem; font-weight: 600; letter-spacing: .02em; white-space: nowrap; }
+.dev svg { width: .9rem; height: .9rem; }
+.dev.phone { background: var(--phone); color: var(--phone-ink); }
+.dev.tv { background: var(--tv); color: var(--tv-ink); }
+.dev.pc { background: var(--pc); color: var(--pc-ink); }
+.steps { list-style: none; margin: 0 0 1.2rem; padding: 0; counter-reset: s; display: flex; flex-direction: column; }
+.steps > li { counter-increment: s; position: relative; padding: 0 0 1.2rem 3rem; }
+.steps > li::before { content: counter(s); position: absolute; left: 0; top: .05rem; width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: .9rem; color: #fff; background: linear-gradient(135deg, var(--primary), var(--accent-2)); }
+.steps > li::after { content: ""; position: absolute; left: calc(1rem - 1px); top: 2.3rem; bottom: .2rem; width: 2px; background: var(--line); }
+.steps > li:last-child { padding-bottom: 0; }
+.steps > li:last-child::after { display: none; }
+.steps .dev { margin-right: .45rem; vertical-align: .1rem; }
+.steps ul { margin: .4rem 0 0; padding-left: 1.1rem; }
+.steps ul li { margin-bottom: .25rem; }
+.ui { font-weight: 600; }
+.path { font-weight: 600; white-space: normal; }
+.note { background: var(--note); color: var(--note-ink); border-radius: 12px; padding: .9rem 1.1rem; margin: 0 0 1.2rem; font-size: .95rem; }
+.note b { font-weight: 600; }
+.options { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 0 0 1.2rem; }
+.option { border: 1px solid var(--line); border-radius: 14px; padding: 1.1rem 1.2rem; background: var(--surface); min-width: 0; }
+.option h4 { margin: 0 0 .5rem; font-family: var(--font-display); font-size: 1rem; }
+.option ol { margin: 0; padding-left: 1.2rem; }
+.option li { margin-bottom: .3rem; }
+@media (max-width: 640px) { .options { grid-template-columns: 1fr; } }
+.shots { display: flex; gap: 1rem; flex-wrap: wrap; margin: .4rem 0 1.4rem; align-items: flex-end; }
+.shots figure { margin: 0; display: flex; flex-direction: column; gap: .4rem; min-width: 0; }
+.shots figcaption { font-size: .82rem; color: var(--muted); }
+.shot-phone { width: 9.5rem; max-width: 42%; background: var(--frame); border-radius: 18px; padding: 4px; }
+.shot-phone img { display: block; width: 100%; height: auto; border-radius: 14px; }
+.shot-wide { width: 21rem; max-width: 100%; background: var(--frame); border-radius: 10px; padding: 4px; }
+.shot-wide img { display: block; width: 100%; height: auto; border-radius: 7px; }
+.faq-table { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.fix { padding: 1rem 1.2rem; border-bottom: 1px solid var(--line); }
+.fix:last-child { border-bottom: 0; }
+.fix h4 { margin: 0 0 .3rem; font-family: var(--font-display); font-size: 1rem; }
+.fix p { margin: 0; color: var(--muted); }
+.fix p + p { margin-top: .4rem; }
+.quality { width: 100%; border-collapse: collapse; font-size: .95rem; margin: 0 0 1.2rem; }
+.quality th, .quality td { text-align: left; padding: .6rem .8rem; border-bottom: 1px solid var(--line); }
+.quality th { font-family: var(--font-display); font-weight: 600; font-size: .85rem; color: var(--muted); }
+.table-wrap { overflow-x: auto; }
+
+/* footer */
+footer { background: var(--footer); color: var(--footer-ink); }
+footer .wrap { padding-block: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font-size: .9rem; }
+footer a { color: inherit; text-decoration: none; }
+footer a:hover { color: #fff; }
+footer nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* text pages */
+.page { max-width: 46rem; padding-block: 3rem 5rem; }
+.page h2 { font-size: 1.4rem; font-weight: 700; margin: 2.6rem 0 .8rem; }
+.page h2:first-child { margin-top: 0; }
+.page h3 { font-size: 1.08rem; font-weight: 600; margin: 1.6rem 0 .5rem; }
+.page p, .page ul { margin: 0 0 1rem; }
+.page ul { padding-left: 1.2rem; }
+.page li { margin-bottom: .4rem; }
+.page li::marker { color: var(--primary); }
+.updated { color: var(--muted); font-size: .92rem; }
+mark.todo { background: var(--note); color: var(--note-ink); padding: .05em .35em; border-radius: 4px; font-weight: 600; }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 0 0 1.5rem; }
+.card { border: 1px solid var(--line); border-radius: 14px; padding: 1.2rem 1.3rem; background: var(--surface); display: flex; flex-direction: column; gap: .4rem; min-width: 0; }
+.card h3 { margin: 0; }
+.card p { margin: 0; color: var(--muted); }
+.card a.go { font-family: var(--font-display); font-weight: 600; text-decoration: none; margin-top: .3rem; }
+.contact { border-radius: 16px; padding: 1.5rem 1.6rem; margin: 0 0 2rem; color: #fff; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
+.contact h2 { margin: 0 0 .3rem; font-size: 1.3rem; color: #fff; }
+.contact p { margin: 0; opacity: .92; }
+.contact .addr { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; background: rgba(255,255,255,.18); padding: .5rem 1rem; border-radius: 10px; user-select: all; }
+.datatable { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.datatable th, .datatable td { text-align: left; vertical-align: top; padding: .65rem .8rem; border-bottom: 1px solid var(--line); }
+.datatable th { font-family: var(--font-display); font-weight: 600; font-size: .85rem; color: var(--muted); background: var(--bg-soft); }
+.datatable td:first-child { font-weight: 600; min-width: 8rem; }
+.table-box { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; margin: 0 0 1.2rem; }
+@media (max-width: 640px) { .cards { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="screens/app-icon.png" alt="" width="40" height="40">
+      Castiqq
+    </a>
+    <nav class="menu" aria-label="Main">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#desktop">Desktop</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="docs.html">Help</a>
+      <a href="index.html#download">Download</a>
+    </nav>
+    <a class="top-cta" href="index.html#download">Download</a>
+  </div>
+</header>
+
+<section class="intro grad">
+  <div class="wrap">
+    <span class="eyebrow">Legal</span>
+    <h1>Terms of Use</h1>
+    <p>The rules for using Castiqq and Castiqq Pro.</p>
+  </div>
+</section>
+
+<main class="wrap">
+  <article class="page">
+    <p class="updated">Effective October 25, 2026</p>
+    <p>These terms apply when you use the Castiqq apps for phones, TVs, Windows and Mac, and this website. Castiqq is provided by Castiqq Labs LLC ("we", "us"). By using Castiqq you agree to these terms.</p>
+
+    <h2>1. Using Castiqq</h2>
+    <p>Castiqq lets you show your phone's or computer's screen and sound on a TV or another computer. You can use it for your own personal or work use. You're responsible for the devices and networks you use it on.</p>
+
+    <h2>2. Your account</h2>
+    <p>Some features need an account. Keep your sign-in details safe and tell us if you think someone else is using your account. You must be at least 13, or the minimum age in your country, to create one.</p>
+
+    <h2>3. Castiqq Pro</h2>
+    <ul>
+      <li>Castiqq Pro is sold in the phone app as a monthly or yearly subscription, or as a one-time Lifetime purchase. Prices are shown before you buy and may vary by country.</li>
+      <li>Payments are made through the App Store or Google Play and follow their terms. Subscriptions renew automatically until you cancel them there, at least 24 hours before the renewal date.</li>
+      <li>Refunds are handled by Apple or Google under their policies.</li>
+      <li>Pro is linked to your Castiqq account and works on the devices you sign in on.</li>
+      <li>We may change Pro's features or prices. Price changes apply from your next billing period, and the app store will tell you beforehand.</li>
+    </ul>
+
+    <h2>4. What you mirror</h2>
+    <p>You're responsible for what you show with Castiqq. Only mirror content you have the right to display, and don't use Castiqq to break the law, infringe anyone's rights, or show content to people without permission. Some apps block screen capture, and Castiqq respects that.</p>
+
+    <h2>5. Acceptable use</h2>
+    <p>Don't misuse Castiqq. For example, don't try to connect to devices you don't own or aren't allowed to use, interfere with other people's devices or networks, get around the Pro paywall, or reverse engineer the apps except where the law allows it.</p>
+
+    <h2>6. Test builds</h2>
+    <p>Before Castiqq is in the app stores, we may share builds directly with you. These builds may have bugs, change without notice, or stop working, and your operating system may warn you before installing them. Only install builds you received from us.</p>
+
+    <h2>7. Our rights</h2>
+    <p>Castiqq, its apps, name and logo belong to Castiqq Labs LLC. These terms give you a personal, non-transferable right to use the apps. They don't transfer any ownership to you.</p>
+
+    <h2>8. No warranty</h2>
+    <p>Castiqq is provided "as is". Mirroring quality depends on your devices, network and the apps you mirror, and we can't promise it will always work or be error-free. Where the law doesn't allow us to exclude warranties, this section applies only as far as the law allows.</p>
+
+    <h2>9. Limitation of liability</h2>
+    <p>To the extent the law allows, we aren't liable for indirect or consequential losses, or for loss of data, profits or business. Our total liability for any claim about Castiqq is limited to the amount you paid us for Castiqq Pro in the 12 months before the claim. Nothing in these terms limits liability that can't be limited by law.</p>
+
+    <h2>10. Ending your use</h2>
+    <p>You can stop using Castiqq and delete your account at any time (see <a href="support.html">Support</a>). We may suspend or close accounts that break these terms. If we stop offering Castiqq Pro, we'll treat any active Lifetime or paid period fairly as required by law.</p>
+
+    <h2>11. Changes</h2>
+    <p>We may update these terms. We'll change the date at the top and, for important changes, tell you in the app or by email. If you keep using Castiqq after a change, the new terms apply.</p>
+
+    <h2>12. Governing law</h2>
+    <p>These terms are governed by the laws of the State of Delaware, USA, and disputes go to the courts of Wilmington, Delaware, unless the law where you live gives you the right to bring a claim locally.</p>
+
+    <h2>13. Contact</h2>
+    <p>Castiqq Labs LLC, 1201 Orange Street, Suite 600, Wilmington, DE 19801, USA. Email: <a href="mailto:support@castiqq.com">support@castiqq.com</a>.</p>
+
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Castiqq. All rights reserved.</span>
+    <nav aria-label="Footer"><a href="index.html">Home</a><a href="docs.html">Help</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="terms.html" aria-current="page">Terms</a></nav>
+  </div>
+</footer>
+</body>
+</html>

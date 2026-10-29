@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Castiqq Privacy Policy</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="What information the Castiqq apps and website collect, why, and your choices.">
+<link rel="canonical" href="https://castiqq.com/privacy.html">
+<meta property="og:url" content="https://castiqq.com/privacy.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: same header, tokens and footer as index.html and docs.html. A short gradient band, then one readable column of text. */
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f3f6fd;
+  --surface: #ffffff;
+  --ink: #111a33;
+  --muted: #5d6987;
+  --line: #e1e7f4;
+  --primary: #1f5ae6;
+  --accent-2: #1fb6ee;
+  --chip: #eef3fe;
+  --phone: #e8f0ff;
+  --phone-ink: #1d4fd0;
+  --tv: #e7f7fd;
+  --tv-ink: #0b7fae;
+  --pc: #efeafd;
+  --pc-ink: #5b3cc4;
+  --note: #fff7e6;
+  --note-ink: #8a5a00;
+  --frame: #0e1526;
+  --footer: #0b1222;
+  --footer-ink: #a9b4cf;
+  --font-display: "Poppins", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Open Sans", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1120; --bg-soft: #101a2e; --surface: #142038; --ink: #eef3fc; --muted: #a2afc9; --line: #22314f;
+    --primary: #5b8dff; --accent-2: #2cc3f5; --chip: #18264a;
+    --phone: #1a2b55; --phone-ink: #9bbcff; --tv: #10334a; --tv-ink: #7fd3f5; --pc: #2a2152; --pc-ink: #c2b2ff;
+    --note: #3a2c0c; --note-ink: #f5d38a;
+    --footer: #070c18; --footer-ink: #a2afc9;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b1120; --bg-soft: #101a2e; --surface: #142038; --ink: #eef3fc; --muted: #a2afc9; --line: #22314f;
+  --primary: #5b8dff; --accent-2: #2cc3f5; --chip: #18264a;
+  --phone: #1a2b55; --phone-ink: #9bbcff; --tv: #10334a; --tv-ink: #7fd3f5; --pc: #2a2152; --pc-ink: #c2b2ff;
+  --note: #3a2c0c; --note-ink: #f5d38a;
+  --footer: #070c18; --footer-ink: #a2afc9;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 1rem; line-height: 1.7; margin: 0; }
+a { color: var(--primary); }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.25; }
+.wrap { max-width: 71rem; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.grad { background: linear-gradient(120deg, #1846c9 0%, #2f74ff 55%, #1fb6ee 100%); }
+
+/* header (matches index.html in its scrolled state) */
+.top { position: sticky; top: 0; z-index: 50; padding-top: env(safe-area-inset-top, 0px); background: linear-gradient(120deg, #1846c9 0%, #2f74ff 55%, #1fb6ee 100%); box-shadow: 0 8px 24px -12px rgba(5, 20, 70, .55); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .7rem; }
+.brand { display: flex; align-items: center; gap: .6rem; color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 1.4rem; text-decoration: none; }
+.brand-mark { width: 40px; height: 40px; border-radius: 11px; display: block; box-shadow: 0 0 0 1px rgba(255,255,255,.35); }
+.menu { display: flex; gap: 2rem; font-family: var(--font-display); font-weight: 500; font-size: .95rem; }
+.menu a { color: rgba(255,255,255,.85); text-decoration: none; }
+.menu a:hover, .menu a[aria-current] { color: #fff; }
+.menu a[aria-current] { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
+.top-cta { display: none; padding: .5rem 1.1rem; border-radius: 999px; background: #fff; color: #1846c9; font-family: var(--font-display); font-weight: 600; font-size: .9rem; text-decoration: none; }
+@media (max-width: 760px) { .menu { display: none; } .top-cta { display: inline-flex; } }
+
+/* intro band */
+.intro { color: #fff; }
+.intro .wrap { padding-block: 3.5rem 3rem; display: flex; flex-direction: column; gap: .9rem; }
+.eyebrow { align-self: flex-start; font-family: var(--font-display); font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; background: rgba(255,255,255,.18); padding: .3rem .9rem; border-radius: 999px; }
+.intro h1 { margin: 0; font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 700; }
+.intro p { margin: 0; max-width: 40rem; opacity: .92; font-size: 1.08rem; }
+.legend { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; font-size: .9rem; }
+.legend .dev { box-shadow: 0 0 0 1px rgba(255,255,255,.4); }
+
+/* layout */
+.docs { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 3.5rem; padding-block: 3rem 5rem; align-items: start; }
+.toc { position: sticky; top: 6rem; max-height: calc(100vh - 7rem); overflow-y: auto; }
+.toc summary { display: none; }
+.toc h2 { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 .8rem; }
+.toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .15rem; border-left: 2px solid var(--line); }
+.toc a { display: block; padding: .35rem .9rem; margin-left: -2px; border-left: 2px solid transparent; color: var(--muted); text-decoration: none; font-size: .93rem; line-height: 1.4; }
+.toc a:hover { color: var(--ink); }
+.toc a.active { color: var(--primary); border-left-color: var(--primary); font-weight: 600; }
+@media (max-width: 900px) {
+  .docs { grid-template-columns: 1fr; gap: 1.5rem; padding-block: 1.5rem 4rem; }
+  .toc { position: static; max-height: none; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: .8rem 1rem; }
+  .toc summary { display: block; cursor: pointer; font-family: var(--font-display); font-weight: 600; }
+  .toc h2 { display: none; }
+  .toc ol { margin-top: .6rem; }
+}
+
+/* tutorials */
+.content { min-width: 0; max-width: 48rem; }
+.tut { padding-bottom: 2.5rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+.tut:last-child { border-bottom: 0; }
+.tut > h2 { font-size: 1.65rem; font-weight: 700; margin: 0 0 .5rem; }
+.tut > h3 { font-size: 1.15rem; font-weight: 600; margin: 2rem 0 .8rem; }
+.tut p { margin: 0 0 1rem; }
+.tut .lead { color: var(--muted); font-size: 1.05rem; }
+.need { display: flex; flex-wrap: wrap; gap: .4rem .6rem; align-items: center; margin: 0 0 1.3rem; font-size: .92rem; color: var(--muted); }
+.need b { color: var(--ink); font-weight: 600; }
+.dev { display: inline-flex; align-items: center; gap: .35rem; padding: .15rem .6rem; border-radius: 999px; font-family: var(--font-display); font-size: .75rem; font-weight: 600; letter-spacing: .02em; white-space: nowrap; }
+.dev svg { width: .9rem; height: .9rem; }
+.dev.phone { background: var(--phone); color: var(--phone-ink); }
+.dev.tv { background: var(--tv); color: var(--tv-ink); }
+.dev.pc { background: var(--pc); color: var(--pc-ink); }
+.steps { list-style: none; margin: 0 0 1.2rem; padding: 0; counter-reset: s; display: flex; flex-direction: column; }
+.steps > li { counter-increment: s; position: relative; padding: 0 0 1.2rem 3rem; }
+.steps > li::before { content: counter(s); position: absolute; left: 0; top: .05rem; width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: .9rem; color: #fff; background: linear-gradient(135deg, var(--primary), var(--accent-2)); }
+.steps > li::after { content: ""; position: absolute; left: calc(1rem - 1px); top: 2.3rem; bottom: .2rem; width: 2px; background: var(--line); }
+.steps > li:last-child { padding-bottom: 0; }
+.steps > li:last-child::after { display: none; }
+.steps .dev { margin-right: .45rem; vertical-align: .1rem; }
+.steps ul { margin: .4rem 0 0; padding-left: 1.1rem; }
+.steps ul li { margin-bottom: .25rem; }
+.ui { font-weight: 600; }
+.path { font-weight: 600; white-space: normal; }
+.note { background: var(--note); color: var(--note-ink); border-radius: 12px; padding: .9rem 1.1rem; margin: 0 0 1.2rem; font-size: .95rem; }
+.note b { font-weight: 600; }
+.options { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 0 0 1.2rem; }
+.option { border: 1px solid var(--line); border-radius: 14px; padding: 1.1rem 1.2rem; background: var(--surface); min-width: 0; }
+.option h4 { margin: 0 0 .5rem; font-family: var(--font-display); font-size: 1rem; }
+.option ol { margin: 0; padding-left: 1.2rem; }
+.option li { margin-bottom: .3rem; }
+@media (max-width: 640px) { .options { grid-template-columns: 1fr; } }
+.shots { display: flex; gap: 1rem; flex-wrap: wrap; margin: .4rem 0 1.4rem; align-items: flex-end; }
+.shots figure { margin: 0; display: flex; flex-direction: column; gap: .4rem; min-width: 0; }
+.shots figcaption { font-size: .82rem; color: var(--muted); }
+.shot-phone { width: 9.5rem; max-width: 42%; background: var(--frame); border-radius: 18px; padding: 4px; }
+.shot-phone img { display: block; width: 100%; height: auto; border-radius: 14px; }
+.shot-wide { width: 21rem; max-width: 100%; background: var(--frame); border-radius: 10px; padding: 4px; }
+.shot-wide img { display: block; width: 100%; height: auto; border-radius: 7px; }
+.faq-table { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.fix { padding: 1rem 1.2rem; border-bottom: 1px solid var(--line); }
+.fix:last-child { border-bottom: 0; }
+.fix h4 { margin: 0 0 .3rem; font-family: var(--font-display); font-size: 1rem; }
+.fix p { margin: 0; color: var(--muted); }
+.fix p + p { margin-top: .4rem; }
+.quality { width: 100%; border-collapse: collapse; font-size: .95rem; margin: 0 0 1.2rem; }
+.quality th, .quality td { text-align: left; padding: .6rem .8rem; border-bottom: 1px solid var(--line); }
+.quality th { font-family: var(--font-display); font-weight: 600; font-size: .85rem; color: var(--muted); }
+.table-wrap { overflow-x: auto; }
+
+/* footer */
+footer { background: var(--footer); color: var(--footer-ink); }
+footer .wrap { padding-block: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font-size: .9rem; }
+footer a { color: inherit; text-decoration: none; }
+footer a:hover { color: #fff; }
+footer nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* text pages */
+.page { max-width: 46rem; padding-block: 3rem 5rem; }
+.page h2 { font-size: 1.4rem; font-weight: 700; margin: 2.6rem 0 .8rem; }
+.page h2:first-child { margin-top: 0; }
+.page h3 { font-size: 1.08rem; font-weight: 600; margin: 1.6rem 0 .5rem; }
+.page p, .page ul { margin: 0 0 1rem; }
+.page ul { padding-left: 1.2rem; }
+.page li { margin-bottom: .4rem; }
+.page li::marker { color: var(--primary); }
+.updated { color: var(--muted); font-size: .92rem; }
+mark.todo { background: var(--note); color: var(--note-ink); padding: .05em .35em; border-radius: 4px; font-weight: 600; }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 0 0 1.5rem; }
+.card { border: 1px solid var(--line); border-radius: 14px; padding: 1.2rem 1.3rem; background: var(--surface); display: flex; flex-direction: column; gap: .4rem; min-width: 0; }
+.card h3 { margin: 0; }
+.card p { margin: 0; color: var(--muted); }
+.card a.go { font-family: var(--font-display); font-weight: 600; text-decoration: none; margin-top: .3rem; }
+.contact { border-radius: 16px; padding: 1.5rem 1.6rem; margin: 0 0 2rem; color: #fff; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
+.contact h2 { margin: 0 0 .3rem; font-size: 1.3rem; color: #fff; }
+.contact p { margin: 0; opacity: .92; }
+.contact .addr { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; background: rgba(255,255,255,.18); padding: .5rem 1rem; border-radius: 10px; user-select: all; }
+.datatable { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.datatable th, .datatable td { text-align: left; vertical-align: top; padding: .65rem .8rem; border-bottom: 1px solid var(--line); }
+.datatable th { font-family: var(--font-display); font-weight: 600; font-size: .85rem; color: var(--muted); background: var(--bg-soft); }
+.datatable td:first-child { font-weight: 600; min-width: 8rem; }
+.table-box { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; margin: 0 0 1.2rem; }
+@media (max-width: 640px) { .cards { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="screens/app-icon.png" alt="" width="40" height="40">
+      Castiqq
+    </a>
+    <nav class="menu" aria-label="Main">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#desktop">Desktop</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="docs.html">Help</a>
+      <a href="index.html#download">Download</a>
+    </nav>
+    <a class="top-cta" href="index.html#download">Download</a>
+  </div>
+</header>
+
+<section class="intro grad">
+  <div class="wrap">
+    <span class="eyebrow">Legal</span>
+    <h1>Privacy Policy</h1>
+    <p>What we collect, what we don't, and the choices you have.</p>
+  </div>
+</section>
+
+<main class="wrap">
+  <article class="page">
+    <p class="updated">Effective October 25, 2026</p>
+    <p>This policy explains what information the Castiqq apps (for phones, TVs, Windows and Mac) and this website handle, and why. Castiqq is provided by Castiqq Labs LLC ("we", "us"). Questions: <a href="mailto:support@castiqq.com">support@castiqq.com</a>.</p>
+
+    <h2>The short version</h2>
+    <ul>
+      <li>What you mirror (your screen and sound) goes straight from your device to your TV or computer over your local network or a USB cable. It never passes through our servers, and we don't record or store it.</li>
+      <li>If you sign in, we keep your account details (such as your email address) so you can use Castiqq Pro on your devices.</li>
+      <li>Payments are handled by Apple or Google. We never see your card details.</li>
+      <li>The apps have no ads, no analytics and no tracking.</li>
+    </ul>
+
+    <h2>Information we collect</h2>
+    <div class="table-box">
+      <table class="datatable">
+        <thead><tr><th>What</th><th>Why</th><th>Who handles it</th></tr></thead>
+        <tbody>
+          <tr><td>Account details: your email address, plus your name or profile details if you sign in with Google or Apple</td><td>To sign you in and link Castiqq Pro to you</td><td>Clerk, our sign-in provider</td></tr>
+          <tr><td>Purchase details: which plan you bought, when, its status, and an account ID that links it to your Castiqq account</td><td>To unlock Pro on the devices you sign in on</td><td>RevenueCat, our subscription provider, with Apple or Google</td></tr>
+          <tr><td>Messages you send us</td><td>To answer you</td><td>Us</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>You can use Castiqq without signing in when the app version you have doesn't require it. Then none of the account or purchase details above are collected.</p>
+
+    <h2>What we don't collect</h2>
+    <ul>
+      <li>Your screen, sound, photos, videos or anything else you mirror.</li>
+      <li>Your contacts, messages, location or browsing.</li>
+      <li>Advertising IDs or analytics about how you use the apps.</li>
+    </ul>
+
+    <h2>Information kept only on your devices</h2>
+    <p>To make reconnecting quick, the apps store some information on your own devices, and it isn't sent to us:</p>
+    <ul>
+      <li>The phone remembers TVs and computers you've paired with and your settings (quality, sound, hidden notifications).</li>
+      <li>TVs and computers remember the phones and computers that paired with them, and show their device names while mirroring.</li>
+      <li>Devices on your local network can see a Castiqq TV or computer's name so you can find it in the app.</li>
+    </ul>
+
+    <h2>Permissions the apps ask for</h2>
+    <ul>
+      <li><b>Screen capture or screen recording:</b> to mirror your screen. Only while you're mirroring.</li>
+      <li><b>Microphone or audio capture</b> (Android): to send your phone's sound. Castiqq doesn't record your voice. It's only used to capture the sound playing on the phone.</li>
+      <li><b>Camera:</b> to scan the QR code on a TV or computer. Images aren't saved or sent.</li>
+      <li><b>Notifications and Do Not Disturb</b> (Android): to show the mirroring notification, and to hide your notifications on the TV if you turn that on.</li>
+      <li><b>Local network and Wi-Fi:</b> to find and connect to your TVs and computers, and to join a TV's or PC's own network in no-router mode.</li>
+      <li><b>USB debugging</b> (Android, optional): only if you choose to mirror to a computer over a cable.</li>
+    </ul>
+
+    <h2>Service providers</h2>
+    <p>We use these companies to run sign-in and subscriptions. They process information on our behalf under their own privacy policies:</p>
+    <ul>
+      <li><a href="https://clerk.com/legal/privacy" target="_blank" rel="noopener">Clerk</a>, for accounts and sign-in.</li>
+      <li><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat</a>, for subscriptions.</li>
+      <li><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a>, for app stores and payments, and for sign-in if you choose them.</li>
+    </ul>
+    <p>We don't sell your information or share it for advertising.</p>
+
+    <h2>How long we keep it</h2>
+    <p>We keep your account and purchase details while you have an account. If you ask us to delete your account, we delete your account details and ask our providers to delete theirs within 30 days. Apple and Google keep their own purchase records.</p>
+
+    <h2>Your choices and rights</h2>
+    <ul>
+      <li>Sign out at any time in the phone app.</li>
+      <li>Email <a href="mailto:support@castiqq.com">support@castiqq.com</a> to see, correct or delete your account details.</li>
+      <li>Depending on where you live, you may have more rights, such as objecting to processing or complaining to your data protection authority.</li>
+    </ul>
+
+    <h2>Security</h2>
+    <p>Sign-in and purchases use our providers' encrypted connections. Mirroring only connects to TVs and computers you pair with a PIN or QR code. Your mirrored content travels over your own local network or cable, so use a network you trust.</p>
+
+    <h2>Children</h2>
+    <p>Castiqq isn't aimed at children under 13, and we don't knowingly collect their information. If you think a child has given us information, contact us and we'll delete it.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If we change this policy, we'll update the date at the top and, for important changes, tell you in the app or by email.</p>
+
+    <h2>Contact</h2>
+    <p>Castiqq Labs LLC, 1201 Orange Street, Suite 600, Wilmington, DE 19801, USA. Email: <a href="mailto:support@castiqq.com">support@castiqq.com</a>.</p>
+
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Castiqq. All rights reserved.</span>
+    <nav aria-label="Footer"><a href="index.html">Home</a><a href="docs.html">Help</a><a href="support.html">Support</a><a href="privacy.html" aria-current="page">Privacy</a><a href="terms.html">Terms</a></nav>
+  </div>
+</footer>
+</body>
+</html>

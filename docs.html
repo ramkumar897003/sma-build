@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Castiqq Help</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Step-by-step tutorials for Castiqq: install the apps, connect your phone to your TV or computer, share your computer's screen, and fix common problems.">
+<link rel="canonical" href="https://castiqq.com/docs.html">
+<meta property="og:url" content="https://castiqq.com/docs.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: same header, tokens and footer as index.html. A short gradient band, then a sticky list of tutorials beside the tutorial column. Each step is tagged with the device you do it on. */
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f3f6fd;
+  --surface: #ffffff;
+  --ink: #111a33;
+  --muted: #5d6987;
+  --line: #e1e7f4;
+  --primary: #1f5ae6;
+  --accent-2: #1fb6ee;
+  --chip: #eef3fe;
+  --phone: #e8f0ff;
+  --phone-ink: #1d4fd0;
+  --tv: #e7f7fd;
+  --tv-ink: #0b7fae;
+  --pc: #efeafd;
+  --pc-ink: #5b3cc4;
+  --note: #fff7e6;
+  --note-ink: #8a5a00;
+  --frame: #0e1526;
+  --footer: #0b1222;
+  --footer-ink: #a9b4cf;
+  --font-display: "Poppins", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Open Sans", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1120; --bg-soft: #101a2e; --surface: #142038; --ink: #eef3fc; --muted: #a2afc9; --line: #22314f;
+    --primary: #5b8dff; --accent-2: #2cc3f5; --chip: #18264a;
+    --phone: #1a2b55; --phone-ink: #9bbcff; --tv: #10334a; --tv-ink: #7fd3f5; --pc: #2a2152; --pc-ink: #c2b2ff;
+    --note: #3a2c0c; --note-ink: #f5d38a;
+    --footer: #070c18; --footer-ink: #a2afc9;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b1120; --bg-soft: #101a2e; --surface: #142038; --ink: #eef3fc; --muted: #a2afc9; --line: #22314f;
+  --primary: #5b8dff; --accent-2: #2cc3f5; --chip: #18264a;
+  --phone: #1a2b55; --phone-ink: #9bbcff; --tv: #10334a; --tv-ink: #7fd3f5; --pc: #2a2152; --pc-ink: #c2b2ff;
+  --note: #3a2c0c; --note-ink: #f5d38a;
+  --footer: #070c18; --footer-ink: #a2afc9;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 1rem; line-height: 1.7; margin: 0; }
+a { color: var(--primary); }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.25; }
+.wrap { max-width: 71rem; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.grad { background: linear-gradient(120deg, #1846c9 0%, #2f74ff 55%, #1fb6ee 100%); }
+
+/* header (matches index.html in its scrolled state) */
+.top { position: sticky; top: 0; z-index: 50; padding-top: env(safe-area-inset-top, 0px); background: linear-gradient(120deg, #1846c9 0%, #2f74ff 55%, #1fb6ee 100%); box-shadow: 0 8px 24px -12px rgba(5, 20, 70, .55); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .7rem; }
+.brand { display: flex; align-items: center; gap: .6rem; color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 1.4rem; text-decoration: none; }
+.brand-mark { width: 40px; height: 40px; border-radius: 11px; display: block; box-shadow: 0 0 0 1px rgba(255,255,255,.35); }
+.menu { display: flex; gap: 2rem; font-family: var(--font-display); font-weight: 500; font-size: .95rem; }
+.menu a { color: rgba(255,255,255,.85); text-decoration: none; }
+.menu a:hover, .menu a[aria-current] { color: #fff; }
+.menu a[aria-current] { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
+.top-cta { display: none; padding: .5rem 1.1rem; border-radius: 999px; background: #fff; color: #1846c9; font-family: var(--font-display); font-weight: 600; font-size: .9rem; text-decoration: none; }
+@media (max-width: 760px) { .menu { display: none; } .top-cta { display: inline-flex; } }
+
+/* intro band */
+.intro { color: #fff; }
+.intro .wrap { padding-block: 3.5rem 3rem; display: flex; flex-direction: column; gap: .9rem; }
+.eyebrow { align-self: flex-start; font-family: var(--font-display); font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; background: rgba(255,255,255,.18); padding: .3rem .9rem; border-radius: 999px; }
+.intro h1 { margin: 0; font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 700; }
+.intro p { margin: 0; max-width: 40rem; opacity: .92; font-size: 1.08rem; }
+.legend { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; font-size: .9rem; }
+.legend .dev { box-shadow: 0 0 0 1px rgba(255,255,255,.4); }
+
+/* layout */
+.docs { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 3.5rem; padding-block: 3rem 5rem; align-items: start; }
+.toc { position: sticky; top: 6rem; max-height: calc(100vh - 7rem); overflow-y: auto; }
+.toc summary { display: none; }
+.toc h2 { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 .8rem; }
+.toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .15rem; border-left: 2px solid var(--line); }
+.toc a { display: block; padding: .35rem .9rem; margin-left: -2px; border-left: 2px solid transparent; color: var(--muted); text-decoration: none; font-size: .93rem; line-height: 1.4; }
+.toc a:hover { color: var(--ink); }
+.toc a.active { color: var(--primary); border-left-color: var(--primary); font-weight: 600; }
+@media (max-width: 900px) {
+  .docs { grid-template-columns: 1fr; gap: 1.5rem; padding-block: 1.5rem 4rem; }
+  .toc { position: static; max-height: none; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: .8rem 1rem; }
+  .toc summary { display: block; cursor: pointer; font-family: var(--font-display); font-weight: 600; }
+  .toc h2 { display: none; }
+  .toc ol { margin-top: .6rem; }
+}
+
+/* tutorials */
+.content { min-width: 0; max-width: 48rem; }
+.tut { padding-bottom: 2.5rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+.tut:last-child { border-bottom: 0; }
+.tut > h2 { font-size: 1.65rem; font-weight: 700; margin: 0 0 .5rem; }
+.tut > h3 { font-size: 1.15rem; font-weight: 600; margin: 2rem 0 .8rem; }
+.tut p { margin: 0 0 1rem; }
+.tut .lead { color: var(--muted); font-size: 1.05rem; }
+.need { display: flex; flex-wrap: wrap; gap: .4rem .6rem; align-items: center; margin: 0 0 1.3rem; font-size: .92rem; color: var(--muted); }
+.need b { color: var(--ink); font-weight: 600; }
+.dev { display: inline-flex; align-items: center; gap: .35rem; padding: .15rem .6rem; border-radius: 999px; font-family: var(--font-display); font-size: .75rem; font-weight: 600; letter-spacing: .02em; white-space: nowrap; }
+.dev svg { width: .9rem; height: .9rem; }
+.dev.phone { background: var(--phone); color: var(--phone-ink); }
+.dev.tv { background: var(--tv); color: var(--tv-ink); }
+.dev.pc { background: var(--pc); color: var(--pc-ink); }
+.steps { list-style: none; margin: 0 0 1.2rem; padding: 0; counter-reset: s; display: flex; flex-direction: column; }
+.steps > li { counter-increment: s; position: relative; padding: 0 0 1.2rem 3rem; }
+.steps > li::before { content: counter(s); position: absolute; left: 0; top: .05rem; width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: .9rem; color: #fff; background: linear-gradient(135deg, var(--primary), var(--accent-2)); }
+.steps > li::after { content: ""; position: absolute; left: calc(1rem - 1px); top: 2.3rem; bottom: .2rem; width: 2px; background: var(--line); }
+.steps > li:last-child { padding-bottom: 0; }
+.steps > li:last-child::after { display: none; }
+.steps .dev { margin-right: .45rem; vertical-align: .1rem; }
+.steps ul { margin: .4rem 0 0; padding-left: 1.1rem; }
+.steps ul li { margin-bottom: .25rem; }
+.ui { font-weight: 600; }
+.path { font-weight: 600; white-space: normal; }
+.note { background: var(--note); color: var(--note-ink); border-radius: 12px; padding: .9rem 1.1rem; margin: 0 0 1.2rem; font-size: .95rem; }
+.note b { font-weight: 600; }
+.options { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 0 0 1.2rem; }
+.option { border: 1px solid var(--line); border-radius: 14px; padding: 1.1rem 1.2rem; background: var(--surface); min-width: 0; }
+.option h4 { margin: 0 0 .5rem; font-family: var(--font-display); font-size: 1rem; }
+.option ol { margin: 0; padding-left: 1.2rem; }
+.option li { margin-bottom: .3rem; }
+@media (max-width: 640px) { .options { grid-template-columns: 1fr; } }
+.shots { display: flex; gap: 1rem; flex-wrap: wrap; margin: .4rem 0 1.4rem; align-items: flex-end; }
+.shots figure { margin: 0; display: flex; flex-direction: column; gap: .4rem; min-width: 0; }
+.shots figcaption { font-size: .82rem; color: var(--muted); }
+.shot-phone { width: 9.5rem; max-width: 42%; background: var(--frame); border-radius: 18px; padding: 4px; }
+.shot-phone img { display: block; width: 100%; height: auto; border-radius: 14px; }
+.shot-wide { width: 21rem; max-width: 100%; background: var(--frame); border-radius: 10px; padding: 4px; }
+.shot-wide img { display: block; width: 100%; height: auto; border-radius: 7px; }
+.faq-table { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.fix { padding: 1rem 1.2rem; border-bottom: 1px solid var(--line); }
+.fix:last-child { border-bottom: 0; }
+.fix h4 { margin: 0 0 .3rem; font-family: var(--font-display); font-size: 1rem; }
+.fix p { margin: 0; color: var(--muted); }
+.fix p + p { margin-top: .4rem; }
+.quality { width: 100%; border-collapse: collapse; font-size: .95rem; margin: 0 0 1.2rem; }
+.quality th, .quality td { text-align: left; padding: .6rem .8rem; border-bottom: 1px solid var(--line); }
+.quality th { font-family: var(--font-display); font-weight: 600; font-size: .85rem; color: var(--muted); }
+.table-wrap { overflow-x: auto; }
+
+/* footer */
+footer { background: var(--footer); color: var(--footer-ink); }
+footer .wrap { padding-block: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font-size: .9rem; }
+footer a { color: inherit; text-decoration: none; }
+footer a:hover { color: #fff; }
+footer nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="d-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></g></symbol>
+  <symbol id="d-tv" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8"/></g></symbol>
+  <symbol id="d-pc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M1 20h22"/></g></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="screens/app-icon.png" alt="" width="40" height="40">
+      Castiqq
+    </a>
+    <nav class="menu" aria-label="Main">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#desktop">Desktop</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="docs.html" aria-current="page">Help</a>
+      <a href="index.html#download">Download</a>
+    </nav>
+    <a class="top-cta" href="index.html#download">Download</a>
+  </div>
+</header>
+
+<section class="intro grad">
+  <div class="wrap">
+    <span class="eyebrow">Help</span>
+    <h1>Castiqq tutorials</h1>
+    <p>Step-by-step guides for putting your phone or computer on a bigger screen. Each step shows which device to do it on.</p>
+    <div class="legend">
+      <span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>
+      <span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span>
+      <span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>
+    </div>
+  </div>
+</section>
+
+<div class="wrap docs">
+  <details class="toc" open>
+    <summary>Tutorials</summary>
+    <h2>Tutorials</h2>
+    <ol>
+      <li><a href="#install">Install the apps</a></li>
+      <li><a href="#sign-in">Sign in</a></li>
+      <li><a href="#phone-to-tv">Phone to TV</a></li>
+      <li><a href="#phone-to-computer">Phone to computer</a></li>
+      <li><a href="#no-router">No Wi-Fi router</a></li>
+      <li><a href="#usb">Mirror over USB</a></li>
+      <li><a href="#browser">Phone to a web browser</a></li>
+      <li><a href="#share-computer">Share your computer's screen</a></li>
+      <li><a href="#extra-screen">Tablet as a second monitor</a></li>
+      <li><a href="#cast-tv">TVs without the app</a></li>
+      <li><a href="#two-phones">Two phones on one TV</a></li>
+      <li><a href="#webcam">Phone as a webcam</a></li>
+      <li><a href="#settings">Sound, quality and game mode</a></li>
+      <li><a href="#volume">Volume buttons</a></li>
+      <li><a href="#lock">Locking the phone, your devices</a></li>
+      <li><a href="#stop">Full screen and stopping</a></li>
+      <li><a href="#pro">Castiqq Pro</a></li>
+      <li><a href="#troubleshooting">Troubleshooting</a></li>
+    </ol>
+  </details>
+
+  <div class="content">
+
+    <!-- 1 -->
+    <section class="tut" id="install">
+      <h2>Install the apps</h2>
+      <p class="lead">Castiqq has an app for each screen. Install it on your phone and on whatever you want to watch on: your TV, your computer, or both.</p>
+
+      <h3><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span> Android phone</h3>
+      <ol class="steps">
+        <li>Open the Castiqq download link we sent you on the phone and download the app file (<b>.apk</b>).</li>
+        <li>Open the downloaded file. If Android says installing from this source isn't allowed, tap <span class="ui">Settings</span>, turn on <span class="ui">Allow from this source</span>, then go back.</li>
+        <li>Tap <span class="ui">Install</span>, then <span class="ui">Open</span>.</li>
+      </ol>
+      <p class="need">Works on Android 8 or newer. Sound needs Android 10 or newer.</p>
+
+      <h3><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span> iPhone</h3>
+      <ol class="steps">
+        <li>Open the Castiqq install link we sent you on the iPhone and follow the steps to install the app.</li>
+        <li>Open <span class="ui">Castiqq</span> from your home screen.</li>
+      </ol>
+      <p class="need">Works on iOS 16.4 or newer.</p>
+
+      <h3><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span> Fire TV</h3>
+      <ol class="steps">
+        <li>On the Fire TV home screen, search for <span class="ui">Downloader</span> and install it.</li>
+        <li>Go to <span class="path">Settings › My Fire TV › About</span> and click your device name 7 times until it says you're a developer.</li>
+        <li>Go back to <span class="path">Settings › My Fire TV › Developer options › Install unknown apps</span> and turn it on for <span class="ui">Downloader</span>.</li>
+        <li>Open <span class="ui">Downloader</span>, type the Castiqq TV link we sent you, and select <span class="ui">Go</span>.</li>
+        <li>When the download finishes, select <span class="ui">Install</span>, then <span class="ui">Open</span>. You'll find <span class="ui">Castiqq TV</span> under <span class="ui">Your Apps &amp; Channels</span> from now on.</li>
+      </ol>
+
+      <h3><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span> Android TV or Google TV</h3>
+      <ol class="steps">
+        <li>Install <span class="ui">Downloader</span> from the Google Play Store on the TV.</li>
+        <li>Open <span class="ui">Downloader</span>, type the Castiqq TV link we sent you, and select <span class="ui">Go</span>.</li>
+        <li>If the TV blocks the install, select <span class="ui">Settings</span> in the message and allow <span class="ui">Downloader</span> to install unknown apps, then go back.</li>
+        <li>Select <span class="ui">Install</span>, then <span class="ui">Open</span>.</li>
+      </ol>
+      <p class="need">Works on Android TV 8 or newer, including Google TV.</p>
+
+      <h3><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span> Windows</h3>
+      <ol class="steps">
+        <li>Download <b>Castiqq-Setup.exe</b> from the link we sent you and open it. (Prefer not to install? Use <b>Castiqq-Portable.exe</b> instead and just open it.)</li>
+        <li>If Windows says <span class="ui">Windows protected your PC</span>, click <span class="ui">More info</span>, then <span class="ui">Run anyway</span>.</li>
+        <li>When Windows Firewall asks, allow Castiqq on <span class="ui">Private networks</span>. Without this, phones can't find or reach your PC.</li>
+      </ol>
+
+      <h3><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span> Mac</h3>
+      <ol class="steps">
+        <li>Download the <b>.dmg</b> from the link we sent you: <b>arm64</b> for Macs with Apple chips (M1 and newer), <b>x64</b> for Intel Macs.</li>
+        <li>Open it and drag <span class="ui">Castiqq</span> into <span class="ui">Applications</span>.</li>
+        <li>Open Castiqq. If macOS won't open it, go to <span class="path">System Settings › Privacy &amp; Security</span>, scroll down and click <span class="ui">Open Anyway</span>.</li>
+        <li>When asked, allow <span class="ui">Local Network</span> access so phones can find your Mac.</li>
+      </ol>
+    </section>
+
+    <!-- 2 -->
+    <section class="tut" id="sign-in">
+      <h2>Sign in</h2>
+      <p class="lead">You need a free account to use Castiqq. Sign in on your phone first, then use your phone to sign in your computer and your TV.</p>
+      <h3><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span> On your phone</h3>
+      <ol class="steps">
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Open Castiqq and tap <span class="ui">Sign in</span>.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Sign in, or create an account if you don't have one yet. You come back to Castiqq when you're done.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Your email shows at the top, with <span class="ui">Free</span> or <span class="ui">Pro</span> under it. <span class="ui">Sign out</span> is next to it.</li>
+      </ol>
+      <h3><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span> On your computer</h3>
+      <ol class="steps">
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Open Castiqq. It shows <span class="ui">Sign in to Castiqq</span>, with a QR code on the right.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>In Castiqq on your signed-in phone, tap <span class="ui">Scan the QR code</span> and point the camera at the code on the computer.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>The computer signs in to the same account and opens on <span class="ui">Receive</span>. Your email shows at the top. You only do this once.</li>
+      </ol>
+      <h3><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span> On your TV</h3>
+      <ol class="steps">
+        <li><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span>Open <span class="ui">Castiqq TV</span>. It shows <span class="ui">Sign in to Castiqq</span>, with a QR code on the right.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>In Castiqq on your signed-in phone, tap <span class="ui">Scan the QR code</span> and scan the code on the TV.</li>
+        <li><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span>The TV signs in and shows its mirroring code and PIN. You only do this once.</li>
+      </ol>
+      <div class="note"><b>Code expired?</b> The code changes after a short while. Scan the one on the screen now. Phone and computer need to be on the same Wi-Fi.</div>
+    </section>
+
+    <!-- 3 -->
+    <section class="tut" id="phone-to-tv">
+      <h2>Mirror your phone to your TV</h2>
+      <p class="lead">The everyday way: your phone and TV on the same Wi-Fi.</p>
+      <p class="need"><b>You'll need:</b> Castiqq on the phone and on the TV, both on the same Wi-Fi network.</p>
+      <ol class="steps">
+        <li><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span>Open <span class="ui">Castiqq TV</span>. It shows its name, a 4-digit PIN and its address on the left, and a QR code on the right.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Open <span class="ui">Castiqq</span>. Then connect in one of two ways:
+          <div class="options" style="margin-top:.7rem">
+            <div class="option">
+              <h4>Scan the code (quickest)</h4>
+              <ol>
+                <li>Tap <span class="ui">Scan the QR code</span>.</li>
+                <li>Point the camera at the code on the TV. The TV and its PIN are filled in for you.</li>
+              </ol>
+            </div>
+            <div class="option">
+              <h4>Pick from the list</h4>
+              <ol>
+                <li>Tap your TV under <span class="ui">TVs on this network</span>.</li>
+                <li>Type the PIN shown on the TV under <span class="ui">PIN shown on the TV</span>.</li>
+              </ol>
+            </div>
+          </div>
+        </li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Tap <span class="ui">Mirror to</span> and your TV's name.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Allow the screen capture:
+          <ul>
+            <li><b>Android:</b> tap <span class="ui">Start now</span>. If you're asked what to share, choose <span class="ui">Entire screen</span>.</li>
+            <li><b>iPhone:</b> in the screen recording sheet, make sure <span class="ui">Castiqq</span> is selected and tap <span class="ui">Start Broadcast</span>.</li>
+          </ul>
+        </li>
+        <li><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span>Your phone's screen and sound now play on the TV.</li>
+      </ol>
+      <div class="shots">
+        <figure><div class="shot-wide"><img src="screens/tv-home-qr-pin.webp" alt="Castiqq TV showing a PIN and QR code" loading="lazy" width="1280" height="720"></div><figcaption>The TV's code and PIN</figcaption></figure>
+        <figure><div class="shot-phone"><img src="screens/phone-pin.webp" alt="Phone app with a TV picked and its PIN typed in" loading="lazy" width="540" height="1110"></div><figcaption>TV picked, PIN typed</figcaption></figure>
+      </div>
+      <div class="note"><b>Next time is faster.</b> Your phone remembers the TV under <span class="ui">Your devices</span>: just tap it. See <a href="#lock">Your devices</a>. TV not in the list? Type the address shown on the TV under <span class="ui">Or enter the address shown on the TV</span>.</div>
+    </section>
+
+    <!-- 4 -->
+    <section class="tut" id="phone-to-computer">
+      <h2>Mirror your phone to your computer</h2>
+      <p class="lead">Your Windows PC or Mac works just like a TV.</p>
+      <p class="need"><b>You'll need:</b> Castiqq on the phone and on the computer, both on the same Wi-Fi network.</p>
+      <ol class="steps">
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Open Castiqq. It starts on <span class="ui">Receive</span>, laid out like the TV: the computer's name, PIN and address on the left, and a QR code on the right. In a narrow window the code moves above them.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Open Castiqq and tap <span class="ui">Scan the QR code</span>, then point the camera at the code on the computer. Or pick the computer from the list and type its PIN.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Tap <span class="ui">Mirror to</span> and the computer's name, then allow the screen capture as above.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Your phone appears in the window. Double-click it or press <b>F</b> for full screen.</li>
+      </ol>
+      <div class="shots">
+        <figure><div class="shot-wide"><img src="screens/desktop-receive.webp" alt="Castiqq desktop app on the Receive screen" loading="lazy" width="1600" height="1018"></div><figcaption>The Receive screen on a computer</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section class="tut" id="no-router">
+      <h2>Mirror without a Wi-Fi router</h2>
+      <p class="lead">In a hotel, dorm, or anywhere without Wi-Fi you can use. The TV or a Windows PC makes its own small network and your phone joins it.</p>
+
+      <h3><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span> To a TV</h3>
+      <ol class="steps">
+        <li><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span>If the TV is connected to Wi-Fi, disconnect it first in the TV's network settings.</li>
+        <li><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span>In Castiqq TV, select <span class="ui">No Wi-Fi router? Start no-router mode</span>. Allow the permission if the TV asks. The TV now shows its own Wi-Fi name and password.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Tap <span class="ui">Scan the QR code</span> and scan the code. Your phone joins the TV's network and connects in one go.
+          <ul><li>Or type the Wi-Fi name and password under <span class="ui">No router? Join the TV's network</span> and tap <span class="ui">Join network</span>.</li></ul>
+        </li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Tap <span class="ui">Mirror to</span> and your TV's name.</li>
+        <li><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span>When you're done, select <span class="ui">Stop no-router mode</span>.</li>
+      </ol>
+
+      <h3><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span> To a Windows PC</h3>
+      <ol class="steps">
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>On the <span class="ui">Receive</span> screen, click <span class="ui">Start</span> under <span class="ui">No router</span>. The QR code now includes the PC's network name and password.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Scan the code. The phone joins the PC's network and connects.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Tap <span class="ui">Mirror to</span> and the PC's name.</li>
+      </ol>
+      <div class="note"><b>Phone joins but can't connect?</b> Windows Firewall is blocking the new network. In <span class="path">Windows Security › Firewall &amp; network protection › Allow an app through firewall</span>, tick <b>Public</b> for Castiqq.</div>
+    </section>
+
+    <!-- 6 -->
+    <section class="tut" id="usb">
+      <h2>Mirror an Android phone over USB</h2>
+      <p class="lead">A cable gives the steadiest picture when Wi-Fi is weak. This works from an Android phone to a computer.</p>
+      <p class="need"><b>You'll need:</b> a USB cable, and USB debugging turned on (one-time setup below). The computer also needs Android's <b>adb</b> tool installed.</p>
+
+      <h3>One-time setup: turn on USB debugging</h3>
+      <ol class="steps">
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Go to <span class="path">Settings › About phone</span> and tap <span class="ui">Build number</span> 7 times until it says you're a developer. (On Samsung: <span class="path">Settings › About phone › Software information</span>.)</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Go to <span class="path">Settings › Developer options</span> and turn on <span class="ui">USB debugging</span>.</li>
+      </ol>
+
+      <h3>Mirror</h3>
+      <ol class="steps">
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Open Castiqq on the <span class="ui">Receive</span> screen and plug in the phone.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>If asked to <span class="ui">Allow USB debugging</span>, tap <span class="ui">Allow</span>. Tick <span class="ui">Always allow from this computer</span> to skip this next time.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Click <span class="ui">Mirror over USB</span> next to your phone under <span class="ui">USB (Android)</span>.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Castiqq opens by itself with the computer already picked. Just allow the screen capture.</li>
+      </ol>
+      <div class="note"><b>No adb on the computer?</b> Turn on <span class="ui">USB tethering</span> on the phone instead (<span class="path">Settings › Network › Hotspot &amp; tethering</span>), then scan the computer's QR code as usual. The connection runs over the cable.</div>
+    </section>
+
+    <!-- browser -->
+    <section class="tut" id="browser">
+      <h2>Mirror your phone to a web browser</h2>
+      <p class="lead">No Castiqq app on the other screen? Any web browser works: a Samsung or LG TV's browser, a laptop, a work computer.</p>
+      <p class="need"><b>You'll need:</b> an Android phone, and the other device on the same Wi-Fi.</p>
+      <ol class="steps">
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Open Castiqq and tap <span class="ui">Mirror to a web browser</span>, then allow the screen capture.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>The phone shows an address like <b>http://192.168.1.30:8080</b>, a QR code and a PIN.</li>
+        <li><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span>or <span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Open the web browser, type the address, then type the PIN on the page.</li>
+        <li><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span>or <span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Your phone's screen and sound play in the browser. If you reload the page, click once to turn the sound back on.</li>
+      </ol>
+      <div class="note"><b>To stop,</b> tap <span class="ui">Stop mirroring</span> on the phone, or <span class="ui">Disconnect</span> on the page.</div>
+    </section>
+
+    <!-- 7 -->
+    <section class="tut" id="share-computer">
+      <h2>Share your computer's screen</h2>
+      <p class="lead">Send a Windows PC's or Mac's screen, or just one window, to a TV or to another computer.</p>
+      <p class="need"><b>You'll need:</b> Castiqq on both devices, on the same Wi-Fi network. On a Mac, first allow Castiqq in <span class="path">System Settings › Privacy &amp; Security › Screen &amp; System Audio Recording</span>, then reopen it.</p>
+      <ol class="steps">
+        <li><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span>or <span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>On the screen you want to watch on, open Castiqq TV, or Castiqq on its <span class="ui">Receive</span> screen.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>On the computer you're sharing from, click <span class="ui">Send this screen</span>.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Under <span class="ui">What to share</span>, pick your whole screen or a window.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Under <span class="ui">Send to</span>, pick the TV or computer. Not listed? Type its address. Click <span class="ui">Refresh</span> to look again.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Choose <span class="ui">Quality</span> and whether to <span class="ui">Send sound</span>, then click <span class="ui">Start mirroring</span>.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>The first time, type the PIN shown on the other screen and click <span class="ui">Connect</span>.</li>
+      </ol>
+      <div class="note"><b>Sound:</b> Windows sends sound. A Mac usually sends the picture only. You can change <span class="ui">Quality</span> while mirroring.</div>
+      <h3>To a TV or computer without Castiqq</h3>
+      <ol class="steps">
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>On <span class="ui">Send this screen</span>, pick <span class="ui">Web browser</span> at the top of the <span class="ui">Send to</span> list and click <span class="ui">Start mirroring</span>.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Castiqq shows an address like <b>192.168.1.20:8080</b> and a PIN.</li>
+        <li><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span>or <span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>On the other device, open its web browser, go to that address and type the PIN. Your screen appears.</li>
+      </ol>
+    </section>
+
+    <!-- extra screen -->
+    <section class="tut" id="extra-screen">
+      <h2>Use a tablet as a second monitor</h2>
+      <p class="lead">Turn an Android tablet (or a TV, or another computer) into an extra screen for your PC or Mac. Drag windows onto it like any monitor.</p>
+      <p class="need"><b>You'll need:</b> Castiqq TV on the tablet (the same app as on TVs; it installs on tablets too), and both on the same Wi-Fi. A Mac needs macOS 11 or newer.</p>
+      <ol class="steps">
+        <li><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span>Open <span class="ui">Castiqq TV</span> on the tablet.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Click <span class="ui">Send this screen</span> and set <span class="ui">Send as</span> to <span class="ui">An extra screen</span>.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span><b>Windows only, the first time:</b> click <span class="ui">Install the driver</span> and allow the admin prompt. This adds the free Virtual Display Driver to Windows.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Pick the tablet and click <span class="ui">Start extending</span>.</li>
+        <li><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span>The tablet becomes a new screen to the right of your others. To move it, use your computer's display settings.</li>
+      </ol>
+      <div class="note"><b>Good to know:</b> touching the tablet doesn't control the computer yet, so use your mouse and keyboard. Stopping removes the extra screen. If Windows says the driver stopped working, click <span class="ui">Restart the driver</span>.</div>
+    </section>
+
+    <!-- cast to TVs without the app -->
+    <section class="tut" id="cast-tv">
+      <h2>Mirror to a TV without the Castiqq app</h2>
+      <p class="lead">Chromecasts, Google TVs and most smart TVs that play videos from your network (many Samsung, LG, Sony and Philips sets) work without installing anything on them.</p>
+      <p class="need"><b>You'll need:</b> an Android phone, and the TV on the same Wi-Fi.</p>
+      <ol class="steps">
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Open Castiqq. Your TV shows up under <span class="ui">TVs without the Castiqq app</span>.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Tap the TV and allow the screen capture.</li>
+        <li><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span>Your phone's screen and sound play on the TV, up to 1080p.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>To stop, tap <span class="ui">Stop mirroring</span> on the phone, or stop it with the TV's remote.</li>
+      </ol>
+      <div class="note"><b>A few seconds behind:</b> these TVs buffer the stream, so the picture runs a little behind your phone. That's fine for videos and photos. For games, use the Castiqq TV app.</div>
+    </section>
+
+    <!-- two phones -->
+    <section class="tut" id="two-phones">
+      <h2>Two phones on one TV</h2>
+      <p class="lead">While one phone is mirroring to an Android TV, a second phone can join. The TV shows both side by side.</p>
+      <ol class="steps">
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>On the second phone, open Castiqq and pick the TV as usual.</li>
+        <li><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span>A phone that has mirrored to this TV before joins straight away. A new one needs the PIN: press <span class="ui">OK</span> on the remote and the TV shows it for a few seconds.</li>
+        <li><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span>You hear one phone at a time. Press <span class="ui">left</span> or <span class="ui">right</span> on the remote to choose which.</li>
+        <li><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span><span class="ui">Back</span> stops the phone you hear, and the other one fills the screen again.</li>
+      </ol>
+      <div class="note"><b>Good to know:</b> with two phones, each sends at most 1080p so the TV keeps up. A TV that can only play one video at a time says it is busy instead.</div>
+    </section>
+
+    <!-- webcam -->
+    <section class="tut" id="webcam">
+      <h2>Use your phone as a webcam</h2>
+      <p class="lead">Use an Android phone's camera as the webcam in Zoom, Google Meet, Teams or the Camera app on a Windows PC.</p>
+      <p class="need"><b>You'll need:</b> an Android phone and a Windows PC running Castiqq, on the same Wi-Fi. On Windows 10 you also need <a href="https://obsproject.com/download">OBS Studio</a> (free), installed once. Windows 11 needs nothing extra.</p>
+      <ol class="steps">
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Open Castiqq. Under <span class="ui">Send</span>, pick <span class="ui">Front camera</span> or <span class="ui">Back camera</span>.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Pick your PC and tap <span class="ui">Send camera</span>. Stand the phone on its side, like a webcam.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Castiqq turns on <span class="ui">Use as webcam</span> by itself and shows the camera's name to pick.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span><b>Windows 11, the first time:</b> allow the permission prompt. This adds <span class="ui">Castiqq Camera</span> to Windows, once per computer.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>In Zoom, Meet, Teams or the Camera app, choose the camera:
+          <ul>
+            <li><b>Windows 11:</b> <span class="ui">Castiqq Camera</span>.</li>
+            <li><b>Windows 10:</b> <span class="ui">OBS Virtual Camera</span>. OBS doesn't need to be open, but its own virtual camera must be off.</li>
+          </ul>
+        </li>
+      </ol>
+      <div class="note"><b>Mirrored screen as a webcam:</b> while a phone's screen shows on the PC, click <span class="ui">Use as webcam</span> in the bar over the picture. On a Mac, the camera shows in the window but can't be used as a webcam yet.</div>
+    </section>
+
+    <!-- 8 -->
+    <section class="tut" id="settings">
+      <h2>Sound, quality and game mode</h2>
+      <p class="lead">Set these on your phone before you tap <span class="ui">Mirror to</span>.</p>
+      <div class="shots">
+        <figure><div class="shot-phone"><img src="screens/phone-quality.webp" alt="Phone app settings: Send audio, Quality and the Mirror button" loading="lazy" width="540" height="1110"></div><figcaption>Settings above the Mirror button</figcaption></figure>
+      </div>
+      <ol class="steps">
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span><span class="ui">Send audio</span>: turn on to hear your phone through the TV or computer. Some apps don't allow their sound to be captured, and those stay silent.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span><span class="ui">Hide notifications on the TV</span> (Android): keeps messages off the big screen. The first time, Castiqq asks for Do Not Disturb access. Allow it, come back, and tap <span class="ui">Mirror to</span> again.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span><span class="ui">Quality</span>: pick how sharp the picture is.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span><span class="ui">Game mode</span>: shows each picture as soon as it arrives, for the least delay. On weak Wi-Fi the picture skips instead of falling behind. An Android TV also switches to its game picture mode. On a computer, tick <span class="ui">Game mode</span> in the <span class="ui">Send this screen</span> options.</li>
+      </ol>
+      <div class="table-wrap">
+        <table class="quality">
+          <thead><tr><th>Quality</th><th>Picture</th><th>Best for</th></tr></thead>
+          <tbody>
+            <tr><td><b>Max</b> (Pro)</td><td>Your phone's full screen resolution, up to 4K, 60 fps</td><td>The sharpest picture on a 4K TV or big monitor, with fast 5 GHz Wi-Fi or USB</td></tr>
+            <tr><td><b>High</b> (Pro)</td><td>1080p, 60 fps</td><td>Videos and games on good Wi-Fi or USB</td></tr>
+            <tr><td><b>Medium</b></td><td>720p, 30 fps</td><td>Most home Wi-Fi</td></tr>
+            <tr><td><b>Low</b></td><td>540p, 30 fps</td><td>Busy or weak Wi-Fi</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note"><b>Change it any time.</b> On Android, the quality buttons stay on the mirroring screen, so you can switch while mirroring.</div>
+      <div class="note"><b>About Max:</b> it never sends more than your phone's screen has, so a 1080p phone gets about the same picture as High. If the phone or TV can't handle the full size, Max uses the largest size they support.</div>
+    </section>
+
+    <!-- volume -->
+    <section class="tut" id="volume">
+      <h2>Control the TV's volume from your phone</h2>
+      <p class="lead">While you're mirroring, your phone's volume buttons turn the TV or computer up and down, even from another app or with the screen off.</p>
+      <ol class="steps">
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Start mirroring as usual.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Press volume up or down. The TV's or computer's volume changes, and your phone shows its level.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>If a video app keeps the buttons for itself, Castiqq shows a small volume bar of its own. Allow <span class="path">Display over other apps</span> for Castiqq so it can show over the app (tap <span class="ui">appear on top</span> on the mirroring screen).</li>
+      </ol>
+      <div class="note"><b>Fire TV and other HDMI sticks:</b> the stick passes the volume to your TV over the HDMI cable using <b>HDMI-CEC</b>. Turn it on in your TV's settings (it may be called Anynet+, SimpLink, Bravia Sync or similar). The phone then shows up and down instead of a level, because the TV's level can't be read.</div>
+      <p>Works with Android TV and Google TV, Fire TV, Windows, Mac and the web browser page. Your phone's own volume goes back to normal when you stop.</p>
+    </section>
+
+    <!-- lock -->
+    <section class="tut" id="lock">
+      <h2>Locking the phone, and your devices</h2>
+      <h3><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span> If you lock the phone</h3>
+      <p>On newer Android phones, locking stops the screen capture. Castiqq keeps the TV connected for up to 10 minutes and the TV or computer shows a clock.</p>
+      <ol class="steps">
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Unlock the phone and tap the Castiqq notification, or open the app.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Tap <span class="ui">Resume mirroring</span> and allow the capture again.</li>
+      </ol>
+      <div class="note"><b>Resume by itself:</b> on the mirroring screen, tap <span class="ui">appear on top</span> and turn on <span class="path">Display over other apps</span> for Castiqq. Then unlocking brings mirroring back on its own.</div>
+      <h3><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span> Your devices</h3>
+      <ol class="steps">
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Every TV and computer you've mirrored to is listed under <span class="ui">Your devices</span>. Tap one marked <span class="ui">Nearby · tap to mirror</span> to connect without a PIN or code.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Turn on <span class="ui">Connect automatically when the app opens</span> to connect to the last one by itself.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Tap <span class="ui">Forget</span> to remove a device. You'll need its PIN or QR code again next time.</li>
+      </ol>
+    </section>
+
+    <!-- 9 -->
+    <section class="tut" id="stop">
+      <h2>Full screen and stopping</h2>
+      <ol class="steps">
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Double-click the picture or press <b>F</b> for full screen. Press <b>Esc</b> to leave it.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Showing a phone? Click <span class="ui">Phone view</span> to shape the window like the phone. It turns when the phone does.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>To stop, tap <span class="ui">Stop mirroring</span> in Castiqq or in its notification.</li>
+        <li><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span>Or press <span class="ui">Back</span> on the remote. On a computer, click <span class="ui">Stop</span>.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>While something is showing, the computer hides the <span class="ui">Receive</span> and <span class="ui">Send this screen</span> tabs. They come back when mirroring stops.</li>
+      </ol>
+    </section>
+
+    <!-- 10 -->
+    <section class="tut" id="pro">
+      <h2>Castiqq Pro</h2>
+      <p class="lead">Everything works for free. Pro adds Max quality (your phone's full screen resolution, up to 4K) and High quality (1080p), both at 60 fps, and removes the Get Pro banner shown next to the picture on the TV and computer.</p>
+      <ol class="steps">
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Sign in, then tap <span class="ui">Get Pro</span> at the top of the app. Tapping <span class="ui">Max</span> or <span class="ui">High</span> under Quality also opens it.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>Pick <b>Monthly</b> ($9.99), <b>Yearly</b> ($79.99) or <b>Lifetime</b> ($99.99) and confirm with the App Store or Google Play.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>New to Pro? Monthly and Yearly start with a <b>14-day free trial</b>: tap <span class="ui">Start 14-day free trial</span>. You're charged on day 15 unless you cancel first in <span class="ui">Manage</span>.</li>
+        <li><span class="dev tv"><svg><use href="#d-tv"/></svg>TV</span>or <span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Nothing to do. They see that you have Pro when your phone connects.</li>
+      </ol>
+      <div class="note"><b>New phone, or reinstalled?</b> Sign in with the same account. If Pro doesn't show, open <span class="ui">Get Pro</span> and tap <span class="ui">Restore purchases</span>. To change or cancel a plan, tap <span class="ui">Manage</span>.</div>
+    </section>
+
+    <!-- 11 -->
+    <section class="tut" id="troubleshooting">
+      <h2>Troubleshooting</h2>
+      <div class="faq-table">
+        <div class="fix">
+          <h4>The computer only shows a sign-in code</h4>
+          <p>It needs to be signed in first. On your phone, sign in to Castiqq, tap <span class="ui">Scan the QR code</span> and scan the code on the computer. Both need to be on the same Wi-Fi. See <a href="#sign-in">Sign in</a>.</p>
+        </div>
+        <div class="fix">
+          <h4>The TV only shows a sign-in code</h4>
+          <p>Sign it in once from your phone: tap <span class="ui">Scan the QR code</span> and scan the code on the TV. See <a href="#sign-in">Sign in</a>.</p>
+        </div>
+        <div class="fix">
+          <h4>The volume buttons change my phone, not the TV</h4>
+          <p>They only work the TV while mirroring is on. With a Fire TV or other stick, turn on HDMI-CEC on the TV. See <a href="#volume">Volume buttons</a>.</p>
+        </div>
+        <div class="fix">
+          <h4>Mirroring paused when I locked my phone</h4>
+          <p>Unlock it and tap <span class="ui">Resume mirroring</span>. To skip this, allow Display over other apps. See <a href="#lock">Locking the phone</a>.</p>
+        </div>
+        <div class="fix">
+          <h4>My TV or computer isn't in the list</h4>
+          <p>Check both are on the same Wi-Fi. Guest networks and some routers hide devices from each other. Scan the QR code or type the address shown on the TV or computer instead.</p>
+        </div>
+        <div class="fix">
+          <h4>The computer is listed but my phone can't connect</h4>
+          <p>Windows: allow Castiqq through Windows Firewall on Private networks, or on Public for no-router mode. Mac: allow Local Network in <span class="path">System Settings › Privacy &amp; Security</span>.</p>
+        </div>
+        <div class="fix">
+          <h4>No sound on the TV</h4>
+          <p>Make sure <span class="ui">Send audio</span> is on. Android needs version 10 or newer, and some apps don't allow their sound to be captured.</p>
+        </div>
+        <div class="fix">
+          <h4>The picture is blocky or stutters</h4>
+          <p>Max needs a strong connection. Pick High, Medium or Low, move closer to the router, or use USB from an Android phone to a computer. After you pause a video, the picture can look soft for a moment. It sharpens again within a few seconds.</p>
+        </div>
+        <div class="fix">
+          <h4>"This TV cannot host a hotspot while on Wi-Fi"</h4>
+          <p>Disconnect the TV from Wi-Fi in its network settings, then start no-router mode again.</p>
+        </div>
+        <div class="fix">
+          <h4>Mirror over USB doesn't appear</h4>
+          <p>Check USB debugging is on, tap <span class="ui">Allow</span> on the phone's prompt, and try unplugging and plugging the cable in again. Or use USB tethering and scan the code.</p>
+        </div>
+        <div class="fix">
+          <h4>Zoom or Teams doesn't list Castiqq Camera</h4>
+          <p>That camera is on Windows 11 only. Allow the permission prompt the first time, then restart the video app so it looks for cameras again. On Windows 10, or if Windows 11 can't add it, install OBS Studio and pick <span class="ui">OBS Virtual Camera</span>. See <a href="#webcam">Phone as a webcam</a>.</p>
+        </div>
+        <div class="fix">
+          <h4>My TV is under "TVs without the Castiqq app" but nothing plays</h4>
+          <p>Check the TV is on and on the same Wi-Fi, and give it a few seconds to start: these TVs buffer before they play. If it still doesn't, install Castiqq TV or use <a href="#browser">the TV's web browser</a>.</p>
+        </div>
+        <div class="fix">
+          <h4>I see a Get Pro banner after buying Pro</h4>
+          <p>Make sure you're signed in on the phone with the account you bought Pro on, then open <span class="ui">Get Pro</span> and tap <span class="ui">Restore purchases</span>. Reconnect to the TV or computer.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Castiqq. All rights reserved.</span>
+    <nav aria-label="Footer"><a href="index.html">Home</a><a href="index.html#faq">FAQ</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+  </div>
+</footer>
+
+<script>
+(() => {
+  // Highlight the tutorial being read in the list.
+  const links = [...document.querySelectorAll('.toc a')];
+  const byId = new Map(links.map(a => [a.hash.slice(1), a]));
+  const sections = [...document.querySelectorAll('.tut[id]')];
+  const update = () => {
+    let current = sections[0];
+    for (const s of sections) if (s.getBoundingClientRect().top < 120) current = s;
+    links.forEach(a => a.classList.remove('active'));
+    if (current) byId.get(current.id)?.classList.add('active');
+  };
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+  // On narrow screens the list starts collapsed and closes after a pick.
+  const toc = document.querySelector('.toc');
+  const narrow = window.matchMedia('(max-width: 900px)');
+  if (narrow.matches) toc.open = false;
+  links.forEach(a => a.addEventListener('click', () => { if (narrow.matches) toc.open = false; }));
+})();
+</script>
+</body>
+</html>
