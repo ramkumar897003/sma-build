@@ -90,7 +90,7 @@ h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 
 .menu a:hover, .menu a[aria-current] { color: #fff; }
 .menu a[aria-current] { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
 .top-cta { display: none; padding: .5rem 1.1rem; border-radius: 999px; background: #fff; color: #1846c9; font-family: var(--font-display); font-weight: 600; font-size: .9rem; text-decoration: none; }
-@media (max-width: 760px) { .menu { display: none; } .top-cta { display: inline-flex; } }
+@media (max-width: 760px) { .top-cta { display: inline-flex; } }
 
 /* intro band */
 .intro { color: #fff; }
@@ -205,6 +205,20 @@ mark.todo { background: var(--note); color: var(--note-ink); padding: .05em .35e
 .datatable td:first-child { font-weight: 600; min-width: 8rem; }
 .table-box { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; margin: 0 0 1.2rem; }
 @media (max-width: 640px) { .cards { grid-template-columns: 1fr; } }
+/* phone menu: a button opens the links as a panel under the bar */
+.top-actions { display: flex; align-items: center; gap: .5rem; }
+.menu-btn { display: none; width: 42px; height: 42px; align-items: center; justify-content: center; padding: 0; border: 0; border-radius: 12px; background: rgba(255,255,255,.16); color: #fff; cursor: pointer; }
+.menu-btn svg { width: 22px; height: 22px; }
+.menu-btn .x, .top.open .menu-btn .bars { display: none; }
+.top.open .menu-btn .x { display: block; }
+@media (max-width: 760px) {
+  .menu-btn { display: inline-flex; }
+  .menu { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; padding: .25rem max(16px, env(safe-area-inset-right, 0px)) 1rem max(16px, env(safe-area-inset-left, 0px)); background: linear-gradient(120deg, #1846c9 0%, #2f74ff 55%, #1fb6ee 100%); box-shadow: 0 18px 30px -16px rgba(5, 20, 70, .6); max-height: 75vh; overflow-y: auto; }
+  .top.open { background: linear-gradient(120deg, #1846c9 0%, #2f74ff 55%, #1fb6ee 100%); }
+  .top.open .menu { display: flex; }
+  .menu a { padding: .9rem .25rem; border-top: 1px solid rgba(255,255,255,.18); font-size: 1.05rem; color: #fff; }
+  .menu a[aria-current] { text-decoration: none; font-weight: 700; }
+}
 </style>
 </head>
 <body>
@@ -215,7 +229,7 @@ mark.todo { background: var(--note); color: var(--note-ink); padding: .05em .35e
       <img class="brand-mark" src="screens/app-icon.png" alt="" width="40" height="40">
       Castiqq
     </a>
-    <nav class="menu" aria-label="Main">
+    <nav class="menu" id="main-menu" aria-label="Main">
       <a href="/#features">Features</a>
       <a href="/#desktop">Desktop</a>
       <a href="/#pricing">Pricing</a>
@@ -223,7 +237,13 @@ mark.todo { background: var(--note); color: var(--note-ink); padding: .05em .35e
       <a href="/docs">Help</a>
       <a href="/#download">Download</a>
     </nav>
-    <a class="top-cta" href="/#download">Download</a>
+    <div class="top-actions">
+      <a class="top-cta" href="/#download">Download</a>
+      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="main-menu">
+        <svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -326,5 +346,18 @@ mark.todo { background: var(--note); color: var(--note-ink); padding: .05em .35e
     <nav aria-label="Footer"><a href="/">Home</a><a href="/docs">Help</a><a href="/support">Support</a><a href="/privacy" aria-current="page">Privacy</a><a href="/terms">Terms</a></nav>
   </div>
 </footer>
+<script>
+(() => {
+  // Phone menu: open and close the links under the bar.
+  const bar = document.querySelector('.top');
+  const btn = bar.querySelector('.menu-btn');
+  const setOpen = open => { bar.classList.toggle('open', open); btn.setAttribute('aria-expanded', String(open)); };
+  btn.addEventListener('click', () => setOpen(!bar.classList.contains('open')));
+  bar.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
+  document.addEventListener('click', e => { if (!bar.contains(e.target)) setOpen(false); });
+  window.matchMedia('(max-width: 760px)').addEventListener('change', e => { if (!e.matches) setOpen(false); });
+})();
+</script>
 </body>
 </html>

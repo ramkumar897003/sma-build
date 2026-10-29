@@ -95,7 +95,6 @@ p { margin: 0; }
 .menu { display: flex; gap: 2rem; font-family: var(--font-display); font-weight: 500; font-size: .95rem; }
 .menu a { color: rgba(255,255,255,.85); text-decoration: none; }
 .menu a:hover { color: #fff; }
-@media (max-width: 760px) { .menu { display: none; } }
 
 /* hero */
 .hero { position: relative; color: var(--on-grad); overflow: hidden; }
@@ -251,6 +250,20 @@ footer .about p { font-size: .93rem; max-width: 20rem; }
 @media (max-width: 760px) { footer .wrap { grid-template-columns: 1fr 1fr; } footer .about { grid-column: 1 / -1; } }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } .cast span { opacity: .5; } }
+/* phone menu: a button opens the links as a panel under the bar */
+.top-actions { display: flex; align-items: center; gap: .5rem; }
+.menu-btn { display: none; width: 42px; height: 42px; align-items: center; justify-content: center; padding: 0; border: 0; border-radius: 12px; background: rgba(255,255,255,.16); color: #fff; cursor: pointer; }
+.menu-btn svg { width: 22px; height: 22px; }
+.menu-btn .x, .top.open .menu-btn .bars { display: none; }
+.top.open .menu-btn .x { display: block; }
+@media (max-width: 760px) {
+  .menu-btn { display: inline-flex; }
+  .menu { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; padding: .25rem max(16px, env(safe-area-inset-right, 0px)) 1rem max(16px, env(safe-area-inset-left, 0px)); background: linear-gradient(120deg, #1846c9 0%, #2f74ff 55%, #1fb6ee 100%); box-shadow: 0 18px 30px -16px rgba(5, 20, 70, .6); max-height: 75vh; overflow-y: auto; }
+  .top.open { background: linear-gradient(120deg, #1846c9 0%, #2f74ff 55%, #1fb6ee 100%); }
+  .top.open .menu { display: flex; }
+  .menu a { padding: .9rem .25rem; border-top: 1px solid rgba(255,255,255,.18); font-size: 1.05rem; color: #fff; }
+  .menu a[aria-current] { text-decoration: none; font-weight: 700; }
+}
 </style>
 </head>
 <body>
@@ -271,7 +284,7 @@ footer .about p { font-size: .93rem; max-width: 20rem; }
         <img class="brand-mark" src="screens/app-icon.png" alt="" width="40" height="40">
         Castiqq
       </a>
-      <nav class="menu" aria-label="Main">
+      <nav class="menu" id="main-menu" aria-label="Main">
         <a href="#features">Features</a>
         <a href="#desktop">Desktop</a>
         <a href="#how">How it works</a>
@@ -280,7 +293,13 @@ footer .about p { font-size: .93rem; max-width: 20rem; }
         <a href="/docs">Help</a>
         <a href="#download">Download</a>
       </nav>
-      <a class="top-cta" href="#download">Download</a>
+      <div class="top-actions">
+        <a class="top-cta" href="#download">Download</a>
+        <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="main-menu">
+          <svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
     </div>
   </div>
   <div class="wrap">
@@ -658,6 +677,19 @@ footer .about p { font-size: .93rem; max-width: 20rem; }
   const update = () => bar.classList.toggle('scrolled', window.scrollY > 24);
   update();
   window.addEventListener('scroll', update, { passive: true });
+})();
+</script>
+<script>
+(() => {
+  // Phone menu: open and close the links under the bar.
+  const bar = document.querySelector('.top');
+  const btn = bar.querySelector('.menu-btn');
+  const setOpen = open => { bar.classList.toggle('open', open); btn.setAttribute('aria-expanded', String(open)); };
+  btn.addEventListener('click', () => setOpen(!bar.classList.contains('open')));
+  bar.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
+  document.addEventListener('click', e => { if (!bar.contains(e.target)) setOpen(false); });
+  window.matchMedia('(max-width: 760px)').addEventListener('change', e => { if (!e.matches) setOpen(false); });
 })();
 </script>
 </body>
