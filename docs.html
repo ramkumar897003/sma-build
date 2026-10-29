@@ -236,6 +236,8 @@ footer nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
       <li><a href="#cast-tv">TVs without the app</a></li>
       <li><a href="#two-phones">Two phones on one TV</a></li>
       <li><a href="#webcam">Phone as a webcam</a></li>
+      <li><a href="#studio">Studio for YouTube videos</a></li>
+      <li><a href="#creator-tools">Clean screen and teleprompter</a></li>
       <li><a href="#settings">Sound, quality and game mode</a></li>
       <li><a href="#volume">Volume buttons</a></li>
       <li><a href="#lock">Locking the phone, your devices</a></li>
@@ -529,6 +531,52 @@ footer nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
     </section>
 
     <!-- 8 -->
+    <section class="tut" id="studio">
+      <h2>Make videos with Studio</h2>
+      <p class="lead">Studio turns the Castiqq app on your computer into a small video studio for YouTube: switch between up to four phones, add a facecam, record, save replays and go live.</p>
+      <p class="need"><b>You'll need:</b> Castiqq on a Windows PC or Mac, and a phone already mirroring to it. For NDI, also <a href="https://ndi.video/tools/">NDI Tools</a> (free), installed once.</p>
+
+      <h3>Open Studio and add phones</h3>
+      <ol class="steps">
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>While a phone is showing, click <span class="ui">Studio</span> in the bar over the picture.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>To add more phones (up to four in all), pick this computer on each one and type the PIN that Studio shows.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span>For a facecam, send a phone's <span class="ui">Front camera</span> or <span class="ui">Back camera</span>. It appears in a corner of the picture.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Pick a layout: <span class="ui">Normal</span>, <span class="ui">Facecam</span>, or <span class="ui">Shorts (9:16)</span> for vertical videos. Where the picture's shape leaves room, a blurred copy of it fills the frame.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Press <span class="ui">1</span> to <span class="ui">4</span> to put a phone on screen. Hold <span class="ui">Ctrl+Alt</span> (<span class="ui">⌘+Option</span> on a Mac) and the keys work from any app, so your game or OBS can stay in front.</li>
+      </ol>
+
+      <h3>Record, replays and chapters</h3>
+      <ol class="steps">
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Click <span class="ui">Record</span> (or press <span class="ui">R</span>). The video is saved as an MP4, in 1080p at 30 fps with the phone's sound, to your Videos folder.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Tick <span class="ui">Mic on its own track</span> to also save your microphone as a separate M4A file, so you can mix your voice while editing.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Press <span class="ui">Marker</span> (or <span class="ui">M</span>) at each new topic. The chapters are saved next to the video in a text file, ready to paste into the YouTube description.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Missed a great moment? Click <span class="ui">Save replay</span> (or press <span class="ui">P</span>) to save the last 30 seconds, even when you weren't recording.</li>
+      </ol>
+
+      <h3>Go live on YouTube</h3>
+      <ol class="steps">
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>In YouTube Studio, choose <span class="path">Go live › Stream</span> and copy the stream key.</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>In Castiqq Studio, click <span class="ui">Go live</span>, paste the key and click <span class="ui">Start streaming</span>. The YouTube server is already filled in, and the key is stored encrypted on your computer.</li>
+      </ol>
+
+      <h3>Send to OBS or vMix with NDI</h3>
+      <ol class="steps">
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Install <a href="https://ndi.video/tools/">NDI Tools</a> (and the NDI plugin if you use OBS).</li>
+        <li><span class="dev pc"><svg><use href="#d-pc"/></svg>Computer</span>Turn on <span class="ui">NDI</span> in Studio. Each phone shows up as its own NDI source in OBS, vMix and other NDI apps on your network.</li>
+      </ol>
+      <div class="note"><b>Good to know:</b> while Studio is open, <span class="ui">Use as webcam</span> sends Studio's picture, layout and facecam included. See <a href="#webcam">Phone as a webcam</a>.</div>
+    </section>
+
+    <section class="tut" id="creator-tools">
+      <h2>Clean screen, Show taps and teleprompter</h2>
+      <p class="lead">Tools on an Android phone that make recordings and tutorials look tidier.</p>
+      <ol class="steps">
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span><b>Clean screen for videos:</b> turn it on in Castiqq before you mirror. The status bar is left out of the picture and notifications are hidden.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span><b>Show taps:</b> shows a dot wherever your finger touches, so viewers can follow along. Tap the row in Castiqq to open Developer options and turn it on. If the phone is plugged into your computer, you can also tick <span class="ui">Show taps</span> next to it in the desktop app's USB list.</li>
+        <li><span class="dev phone"><svg><use href="#d-phone"/></svg>Phone</span><b>Teleprompter:</b> while sending the camera, tap <span class="ui">Teleprompter</span>, paste your script and tap <span class="ui">Start</span>. The text scrolls near the top of the screen, close to the front camera, so you look into the lens. Tap the text to pause.</li>
+      </ol>
+    </section>
+
     <section class="tut" id="settings">
       <h2>Sound, quality and game mode</h2>
       <p class="lead">Set these on your phone before you tap <span class="ui">Mirror to</span>.</p>
