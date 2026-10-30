@@ -164,7 +164,7 @@ p { margin: 0; }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
 .split.rev .split-art { order: 2; }
 .split-copy { display: flex; flex-direction: column; gap: 1.3rem; min-width: 0; }
-.split-art { display: flex; justify-content: center; gap: 1.5rem; min-width: 0; position: relative; }
+.split-art { display: flex; justify-content: center; align-items: flex-start; gap: 1.5rem; min-width: 0; position: relative; }
 .split-art::before { content: ""; position: absolute; width: 78%; aspect-ratio: 1; border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 18%, transparent), color-mix(in srgb, var(--accent-2) 14%, transparent)); }
 .split-art .phone { width: min(15rem, 46%); position: relative; }
 .split-art .phone + .phone { margin-top: 3rem; }
